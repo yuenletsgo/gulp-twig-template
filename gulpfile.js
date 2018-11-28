@@ -19,8 +19,9 @@ var config = {
   src: 'src/',
   cssin: 'src/css/**/*.css',
   jsin: 'src/js/**/*.js',
+  twigin: 'src/twig/**/*.twig',
   imgin: 'src/img/**/*.{jpg,jpeg,png,gif}',
-  htmlin: 'src/*.html',
+  htmlin: '*.html',
   scssin: 'src/scss/**/*.scss',
   cssout: 'dist/css/',
   jsout: 'dist/js/',
@@ -80,9 +81,9 @@ gulp.task('img', function() {
 });
 
 gulp.task('twig', function() {
-  return gulp.src(['./twig/*.twig'])
+  return gulp.src(config.twigin)
   .pipe(twig())
-  .pipe(gulp.dest("./"));
+  .pipe(gulp.dest('./'));
 });
 
 gulp.task('html', function() {
